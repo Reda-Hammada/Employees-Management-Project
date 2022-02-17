@@ -23,7 +23,7 @@ $data = json_decode($getfile);
 				?>
 				<tr>
 					<td><?php echo $index; ?></td>
-					<td><?php echo $person[0];?></td>
+					<td><?php echo $person[0];?></td> 
 					<td><?php echo $person[1]; ?></td>
 					<td><?php echo $person[2]; ?></td>
 					<td><?php echo $person[3]; ?></td>
