@@ -5,7 +5,6 @@
         $firstName = $_POST['fname'];
         $lastName = $_POST['lname'];
         $age = $_POST['age'];
-        $person = array($firstName, $lastName, $age);
 
         // sql insert query
         $sqlInsertQuery = "INSERT INTO people(fname, lname, age) 
