@@ -5,12 +5,11 @@
         $firstName = $_POST['fname'];
         $lastName = $_POST['lname'];
         $age = $_POST['age'];
-        $gender = $_POST['gender'];
-        $person = array($firstName, $lastName, $age, $gender);
+        $person = array($firstName, $lastName, $age);
 
         // sql insert query
-        $sqlInsertQuery = "INSERT INTO employees(first_name, last_name, age, gender) 
-                                VALUES('$firstName', '$lastName', '$age', '$gender')";
+        $sqlInsertQuery = "INSERT INTO people(fname, lname, age) 
+                                VALUES('$firstName', '$lastName', '$age')";
         
         mysqli_query($conn, $sqlInsertQuery);
      
@@ -19,15 +18,6 @@
     }
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <body>
 <div>
         <div>
@@ -50,15 +40,7 @@
 				<input type="number" required="required" class="form-control" id="inputAge" name="age" placeholder="Age">
 				<span></span>
 			</div>
-				<div class="form-group">
-					<label for="inputGender">Gender</label>
-					<select class="form-control" required="required" id="inputGender" name="gender" >
-						<option>Please Select</option>
-						<option value="Male">Male</option>
-						<option value="Female">Female</option>
-					</select>
-					<span></span>
-        		</div>
+		
     
 			<div class="form-actions">
 					<button type="submit">Create</button>
