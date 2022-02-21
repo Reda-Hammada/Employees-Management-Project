@@ -1,6 +1,6 @@
 <?php
 
-class EmployeeManager{
+class EmployeesManager{
 
     public function getAllEmployees($connectDB){
 
@@ -11,7 +11,7 @@ class EmployeeManager{
     }
 
     public function insertEmployee($connectDB, $employee){
-        
+
     }
 }
 

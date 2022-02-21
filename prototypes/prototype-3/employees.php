@@ -1,6 +1,6 @@
 <?php
 
-class Employee{
+class Employees{
 
     private $id;
     private $firstName;
