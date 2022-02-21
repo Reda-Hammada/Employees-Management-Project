@@ -28,6 +28,7 @@ if(!empty($_POST)){
     <title>Prorotype 3</title>
 </head>
 <body>
+    <h1>Add an Employee</h1>
     <form method="post">
         <input type="text" name="frist_name" required>
         <input type ="text" name="last_name" required>
