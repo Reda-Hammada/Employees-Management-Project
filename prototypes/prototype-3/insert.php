@@ -9,10 +9,10 @@ if(!empty($_POST)){
 
     $employee = new Employees();
     $employeeManager = new EmployeesManager();
-    $firstName =  setfirstName($_POST['first_name']);
-    $lastName = setlastName($_POST['last_name']);
-    $age =  setAge($_POST['age']);
-    $employeeManager->insertEmpoloyees($connectDB, $employee);
+    $employee->setfirstName($_POST['first_name']);
+    $employee->setlastName($_POST['last_name']);
+    $employee->setAge($_POST['age']);
+    $employeeManager->insertEmployees($connectDB, $employee);
 
     header("location: index.php");
 }
@@ -30,9 +30,10 @@ if(!empty($_POST)){
 <body>
     <h1>Add an Employee</h1>
     <form method="post">
-        <input type="text" name="frist_name" required>
+        <input type="text" name="first_name" required>
         <input type ="text" name="last_name" required>
         <input type="text" name="age" required>
+        <input type="submit"  value ="add">
     </form>
 </body>
 </html>

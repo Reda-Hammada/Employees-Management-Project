@@ -1,6 +1,6 @@
 <?php
 
-$connectDB =  mysql_connect('localhost', 'Reda', '123456', 'prototype3');
+$connectDB =  mysqli_connect('localhost', 'Reda', '123456', 'prototype3');
 
 // check if connection went successfully 
 if($connectDB){
