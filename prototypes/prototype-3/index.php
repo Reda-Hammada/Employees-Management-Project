@@ -1,8 +1,7 @@
 <?php
-include 'config.php';
 include 'employeesManager.php';
 $employeeManager = new employeesManager();
-$data = $employeeManager->getAllEmployees($connectDB);
+$data = $employeeManager->getAllEmployees();
 
 ?>
 
@@ -23,19 +22,19 @@ $data = $employeeManager->getAllEmployees($connectDB);
             <th>last name</th>
             <th>age</th>
         </tr> 
-        <tr>
 
     <?php
     foreach($data as $employee){
 
     
+?>
 
+<tr>
 
-    ?>
       
-            <td><?php echo $employee['first_name'] ?></td>
-            <td><?php echo $employee['last_name'] ?></td>
-            <td><?php echo $employee['age'] ?></td>
+            <td><?php echo $employee->getfirstName()?></td>
+            <td><?php echo $employee->getlastName() ?></td>
+            <td><?php echo $employee->getAge() ?></td>
          
         </tr>      
         <?php }?>
