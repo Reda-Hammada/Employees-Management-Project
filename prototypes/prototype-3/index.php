@@ -35,7 +35,7 @@ $data = $employeeManager->getAllEmployees();
             <td><?php echo $employee->getfirstName()?></td>
             <td><?php echo $employee->getlastName() ?></td>
             <td><?php echo $employee->getAge() ?></td>
-         
+           
         </tr>      
         <?php }?>
          
