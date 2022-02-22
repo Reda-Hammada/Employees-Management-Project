@@ -19,7 +19,7 @@ $data = json_decode($ajouterFicher);
         <a href="insert.php">ajoute</a>    
     </div>
     <table>
-    <tr>
+            <tr>
                 <th>Prenom</th>
                 <th>Nom</th>
                 <th>Age</th>

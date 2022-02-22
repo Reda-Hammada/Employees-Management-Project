@@ -6,7 +6,7 @@ class EmployeesManager{
 
         private function getConnect(){
             if(is_null($this->connect)){
-                $this->connect =  mysqli_connect('localhost', 'Reda', '123456', 'prototype3');
+                $this->connect =  mysqli_connect('localhost','Reda','123456','prototype3');
             }
 
             else{
@@ -42,6 +42,7 @@ class EmployeesManager{
         foreach($datas as $data){
 
                 $employe = new Employees();
+                $employe->setId($data['ID']);
                 $employe->setfirstName($data['first_name']);
                 $employe->setlastName($data['last_name']);
                 $employe->setAge($data['age']);
@@ -52,6 +53,12 @@ class EmployeesManager{
 
         return $dataArray;
 
+    }
+
+    public function deleteEmployee($id){
+
+      $deleteDB = "DELETE FROM employees WHERE ID = '$id'";
+      mysqli_query($this->getConnect(), $deleteDB);
     }
 
 

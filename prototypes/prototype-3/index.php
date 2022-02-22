@@ -35,7 +35,10 @@ $data = $employeeManager->getAllEmployees();
             <td><?php echo $employee->getfirstName()?></td>
             <td><?php echo $employee->getlastName() ?></td>
             <td><?php echo $employee->getAge() ?></td>
-           
+             <td><a href="edit.php?id=<?php echo $employee->getId() ?>">edit</a></td>
+            <td><a href="delete.php?id=<?php echo $employee->getId() ?>">delete</a></td>
+         
+         
         </tr>      
         <?php }?>
          
