@@ -15,7 +15,15 @@ $data = $employeeManager->getAllEmployees($connectDB);
     <title>Document</title>
 </head>
 <body>
+    <a href="insert.php">Add new Employee</a>
     <table>
+
+    <tr>
+            <th>first name</th>
+            <th>last name</th>
+            <th>age</th>
+        </tr> 
+        <tr>
 
     <?php
     foreach($data as $employee){
@@ -24,12 +32,7 @@ $data = $employeeManager->getAllEmployees($connectDB);
 
 
     ?>
-        <tr>
-            <th>first name</th>
-            <th>last name</th>
-            <th>age</th>
-        </tr> 
-        <tr>
+      
             <td><?php echo $employee['first_name'] ?></td>
             <td><?php echo $employee['last_name'] ?></td>
             <td><?php echo $employee['age'] ?></td>
