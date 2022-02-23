@@ -67,8 +67,21 @@ class EmployeesManager{
         $getById = "SELECT * FROM employees WHERE ID = '$id'";
         $result =  mysqli_query($this->getConnect(), $getById);
         $employeeData = mysqli_fetch_assoc($result);
-    }
 
+        $employee = new EmployeesManager();
+
+        $employee->setfirstName($employeeData['first_name']);
+        $employee->setlastName($employeeData['last_name']);
+        $employe->setAge('age');
+
+        return $employee;
+
+
+    }
+    
+    public function modifyEmployee($firstName,$lastName, $age){
+
+    }
 }
 
 
