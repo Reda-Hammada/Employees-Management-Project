@@ -62,6 +62,13 @@ class EmployeesManager{
     }
 
 
+    public function getById($id){
+
+        $getById = "SELECT * FROM employees WHERE ID = '$id'";
+        $result =  mysqli_query($this->getConnect(), $getById);
+        $employeeData = mysqli_fetch_assoc($result);
+    }
+
 }
 
 
