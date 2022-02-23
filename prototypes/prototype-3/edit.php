@@ -1,17 +1,21 @@
 <?php
 include 'employeesManager.php';
 
-$employeeManager = new employeesManager();
-
+$employeeManager = new EmployeesManager();
 if(isset($_GET['id'])){
 
-    $employeeManager->getById($_GET['id']);
+   $employee =  $employeeManager->getById($_GET['id']);
 
 
 }
 
-if(isset($_POST[''])){
-
+if(isset($_POST['modify'])){
+    $id = $_POST['id'];
+    $first_Name = $_POST['firstName'];
+    $last_Name = $_POST['lastName'];
+    $age = $_POST['age'];
+    $employeeManager->modifyEmployee($id,$first_Name,$last_Name,$age);
+    header('location:index.php');
 }
 
 ?>
@@ -27,11 +31,13 @@ if(isset($_POST[''])){
 </head>
 
 <body>
-    <h1> <?php echo "Modify" . " " .$employe->getfirstName() . $employee->getlastName()  . " " . "infromation" ?> </h1>
     <form method="post">
-        <input type="text name="firstName" value=<?php echo $employee->getfirstName() ?>>
-        <input type="text name="lastName"  value=<?php echo $employee->getlastName() ?>>
-        <input type="text name="age" value= <?php echo $employee->getAge() ?>>
+        <input type="text" name="id" value=<?php echo $employee->getId() ?>><br>
+        <input type="text" name="firstName" value=<?php echo $employee->getfirstName()  ?>><br>
+        <input type="text" name="lastName"  value=<?php echo $employee->getlastName()  ?>><br>
+        <input type="text" name="age" value= <?php echo $employee->getAge()?>><br>
+        <input type="submit" value="modify" name="modify">
+        <a href="index.php">cancel</a>
     </form>
     
 </body>

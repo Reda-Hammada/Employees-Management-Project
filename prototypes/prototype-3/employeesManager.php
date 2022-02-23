@@ -57,30 +57,41 @@ class EmployeesManager{
 
     public function deleteEmployee($id){
 
-      $deleteDB = "DELETE FROM employees WHERE ID = '$id'";
+      $deleteDB = "DELETE FROM employees WHERE ID = $id";
       mysqli_query($this->getConnect(), $deleteDB);
     }
 
 
     public function getById($id){
 
-        $getById = "SELECT * FROM employees WHERE ID = '$id'";
+        $getById = "SELECT * FROM employees WHERE ID = $id";
         $result =  mysqli_query($this->getConnect(), $getById);
         $employeeData = mysqli_fetch_assoc($result);
 
-        $employee = new EmployeesManager();
-
+        $employee = new Employees();
+        $employee->setId($employeeData['ID']);
         $employee->setfirstName($employeeData['first_name']);
         $employee->setlastName($employeeData['last_name']);
-        $employe->setAge('age');
+        $employee->setAge($employeeData['age']);
 
         return $employee;
 
 
     }
     
-    public function modifyEmployee($firstName,$lastName, $age){
+    public function modifyEmployee($id,$first_Name,$last_Name,$age){
 
+        $updateDB = "UPDATE employees SET 
+        first_name='$first_Name', last_name ='$last_Name', age='$age'
+        WHERE ID = $id ";
+
+       mysqli_query($this->getConnect(),$updateDB);
+        
+        if(mysqli_error($this->getConnect())){
+
+            $message = "data base connection error " . mysqli_error($this->getConnect());
+            throw new exception($message);
+        }
     }
 }
 
