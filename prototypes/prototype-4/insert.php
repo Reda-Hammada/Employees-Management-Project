@@ -1,11 +1,14 @@
 <?php
 
 
-include 'employees.php';
 
 if(!empty($_POST)){
 
-    
+    $employee = new Employees();
+    $employee->setId()
+    $employee->setfirstName($_POST['firstName']);
+    $employee->setlastName($_POST['lastName']);
+    $employee->setbirthDay($_POST['birthDay']);
 }
 
 ?>
@@ -20,9 +23,12 @@ if(!empty($_POST)){
     <title>insert new employee</title>
 </head>
 <body>
-    <form type="text" name="firstName" required>
-    <form type="text" name="lastName" required>
-    <form type="date" name="birthDay" required>
+    <form method="post">
+
+            <input type="text" name="firstName" required>
+            <input type="text" name="lastName" required>
+            <input type="date" name="birthDay" required>
+            <input type="submit" value="Add Employee">
     </form>
 </body>
 </html>
