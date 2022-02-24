@@ -45,10 +45,14 @@ class EmployeesManager {
     public function deleteEmployee($id){
 
         $fileJSON = file_get_contents('employees.json');
-        $dataJSON  = json_decode($fileJSON,true);
+        $dataJSON  = json_decode($fileJSON);
         for($i=0; $i<count($dataJSON); $i++){
-            if($id = $dataJSON[$i][0]){
+            if($id == $dataJSON[$i]->id){
                 unset($dataJSON[$i]);
+                $dataJSON = array_values($dataJSON);
+                file_put_contents('employees.json', json_encode($dataJSON));
+                break;
+
             }
         }
 
