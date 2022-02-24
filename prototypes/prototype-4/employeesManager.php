@@ -47,6 +47,7 @@ class EmployeesManager {
         $fileJSON = file_get_contents('employees.json');
         $dataJSON  = json_decode($fileJSON);
         for($i=0; $i<count($dataJSON); $i++){
+
             if($id == $dataJSON[$i]->id){
                 unset($dataJSON[$i]);
                 $dataJSON = array_values($dataJSON);
