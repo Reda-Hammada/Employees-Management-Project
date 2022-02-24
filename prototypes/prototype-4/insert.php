@@ -11,6 +11,7 @@ if(!empty($_POST)){
     $employee->setlastName($_POST['lastName']);
     $employee->setbirdthDay($_POST['birthDay']);
     $employeeManager->insertEmployee($employee);
+    header('location:index.php');
 }
 
 
