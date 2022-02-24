@@ -31,14 +31,18 @@ $dataEmployee = $employeeManager->getEmployee();
         ?>
 
         <tr>
-            <td><?php echo  $data->getfirstName()   ?></td>
-            <td><?php echo $data->getlastName()   ?></td>
-            <td><?php echo $data->getbirthDay()  ?></td>
+            <td><?= $data->getfirstName()  ?></td>
+            <td><?=  $data->getlastName()   ?></td>
+            <td><?=  $data->getbirthDay()  ?></td>
+        
+        <td>
+        <a href="edit.php?id=<?php echo $data->getId() ?>">Edit</a>
+        <a href="delete.php?id=<?php echo $data->getId()?>">Delete</a>
+        </td>
         </tr>
-
-                
+        <?php } ?>
+    
 
     </table>
-    <?php } ?>
 </body>
 </html>

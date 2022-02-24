@@ -11,9 +11,9 @@ class EmployeesManager {
         $employeeData = array(
 
             'id'=> $employee->getId(),
-            'First_name' => $employee -> getfirstName(),
-            'Last_name' => $employee ->  getlastName(),
-            'birth_day' => $employee -> getbirthDay()
+            'firstname' => $employee -> getfirstName(),
+            'lastname' => $employee ->  getlastName(),
+            'birthday' => $employee -> getbirthDay()
         );
 
         array_push($JSONarray, $employeeData);
@@ -25,21 +25,25 @@ class EmployeesManager {
     public function getEmployee(){
 
         $file = file_get_contents('employees.json');
-        $employee_data = json_decode($file);
+        $employee_data = json_decode($file, true);
         $employeeArray = array();
         foreach($employee_data as $data){
             $employee = new Employees();
-            $employee->setId($data->id);
-            $employee->setfirstName($data[1]);
-            $employee->setlastName($data[2]);
-            $employee->setbirthDay($data[3]);
+            $employee->setId($data['id']);
+            $employee->setfirstName($data['firstname']);
+            $employee->setlastName($data['lastname']);
+            $employee->setbirdthDay($data['birthday']);
 
             array_push($employeeArray,$employee);
         }
 
-        return $employee;
-
+        return $employeeArray;
         
+    }
+
+
+    public function deleteEmployee($id){
+
     }
 
 
