@@ -15,7 +15,7 @@ $dataEmployee = $employeeManager->getEmployee();
 </head>
 <body>
 
-                     
+      <a href="insert.php">add employee</a>               
     <table>
         <tr>
             <th>First name</th>
