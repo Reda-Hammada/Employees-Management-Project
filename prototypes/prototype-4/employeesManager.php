@@ -52,7 +52,7 @@ class EmployeesManager {
                 $dataJSON = array_values($dataJSON);
                 file_put_contents('employees.json', json_encode($dataJSON));
                 break;
-
+ 
             }
         }
 
