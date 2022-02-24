@@ -28,7 +28,7 @@ class Employees {
 
     public function getfirstName(){
 
-        return $this->fristName;
+        return $this->firstName;
     }
     
     public function setlastName($value){
