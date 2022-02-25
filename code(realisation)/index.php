@@ -1,5 +1,4 @@
 <?php
-include 'session.php';
 include 'employeesManager.php';
 $employeeManager = new employeesManager();
 $data = $employeeManager->getAllEmployees();
@@ -18,42 +17,64 @@ $data = $employeeManager->getAllEmployees();
 <body>
     <header>
         <nav>
+            <section class="topNavBar ">
+                <div>
+                    
+                    <img src="./img/logo.png">
+
+                </div>
+                <div>
+                    <input type="search" name="search">
+                    <input class="btn btn-success" type="button" value="search">
+                <div>
+                <div>
+                    <a class="btn btn-success" href="logout.php">log out</a>
+                </div>
+            </section>
+            <section class="sideNavBar">
+            </section>
+            
 
         </nav>
     </header>
-    <table>
-    <a class="btn btn-primary" href="insert.php">Add new Employee</a> 
+    <main>
+        <section>
+            <table>
+                <?php  include 'session.php'; ?>
+                <a class="btn btn-success" href="insert.php">Add new Employee</a> 
 
-        <tr>
+                    <tr>
 
-            <th>first name</th>
-            <th>last name</th>
-            <th>birthday</th>
-            <th>department</th>
-            <th>occupation</th>
-            <th>salary<th>
+                        <th>first name</th>
+                        <th>last name</th>
+                        <th>birthday</th>
+                        <th>department</th>
+                        <th>occupation</th>
+                        <th>salary<th>
 
-        </tr> 
+                    </tr> 
 
-    <?php
-    foreach($data as $employee){
+                <?php
+                foreach($data as $employee){
 
-    
-?>
+                
+            ?>
 
-<tr>
+                    <tr>
 
-      
-            <td><?php echo $employee->getfirstName()?></td>
-            <td><?php echo $employee->getlastName() ?></td>
-            <td><?php echo $employee->getAge() ?></td>
-             <td><a href="edit.php?id=<?php echo $employee->getId() ?>">edit</a></td>
-            <td><a href="delete.php?id=<?php echo $employee->getId() ?>">delete</a></td>
-         
-         
-        </tr>      
-        <?php }?>
-         
-</table>
+                
+                        <td><?php echo $employee->getfirstName()?></td>
+                        <td><?php echo $employee->getlastName() ?></td>
+                        <td><?php echo $employee->getAge() ?></td>
+                        <td><a href="edit.php?id=<?php echo $employee->getId() ?>">edit</a></td>
+                        <td><a href="delete.php?id=<?php echo $employee->getId() ?>">delete</a></td>
+                    
+                    
+                    </tr>      
+                    <?php }?>
+            
+            </table>
+        </section>
+    </main>
 </body>
 </html>
