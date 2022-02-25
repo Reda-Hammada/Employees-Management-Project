@@ -42,7 +42,7 @@ class Employees {
 
     }
 
-    public function  setbirdthDay($value){
+    public function  setbirthDay($value){
 
         $this->birthDay =  $value;
     }

@@ -9,7 +9,7 @@ if(!empty($_POST)){
     $employee->setId(uniqid());
     $employee->setfirstName($_POST['firstName']);
     $employee->setlastName($_POST['lastName']);
-    $employee->setbirdthDay($_POST['birthDay']);
+    $employee->setbirthDay($_POST['birthDay']);
     $employeeManager->insertEmployee($employee);
     header('location:index.php');
 }

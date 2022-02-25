@@ -25,14 +25,14 @@ class EmployeesManager {
     public function getEmployee(){
 
         $file = file_get_contents('employees.json');
-        $employee_data = json_decode($file, true);
+        $employee_data = json_decode($file,true);
         $employeeArray = array();
         foreach($employee_data as $data){
             $employee = new Employees();
             $employee->setId($data['id']);
             $employee->setfirstName($data['firstname']);
             $employee->setlastName($data['lastname']);
-            $employee->setbirdthDay($data['birthday']);
+            $employee->setbirthDay($data['birthday']);
 
             array_push($employeeArray,$employee);
         }
@@ -56,6 +56,61 @@ class EmployeesManager {
  
             }
         }
+
+    }
+
+    public function getEmployeeById($id){
+
+        $jsonFile =  file_get_contents('employees.json');
+        $json = json_decode($jsonFile);
+        $employee = new Employees();
+
+        foreach($json as $employe){
+
+           if($employe->id == $id){
+
+            $employee->setId($employe->id);
+            $employee->setfirstName($employe->firstname);
+            $employee->setlastName($employe->lastname);
+            $employee->setbirthDay($employe->birthday);
+
+            break;
+
+           }
+
+
+
+
+        }
+
+        return $employee;
+
+
+    }
+    
+    public function editEmployee($id,$firstName,$lastName,$birthDay){
+        $file = file_get_contents('employees.json');
+        $dataJSON =  json_decode($file,true);
+        $modifiedEmployee = array(
+
+            'id' => $id,
+            'firstname'=> $firstName,
+            'lastname' => $lastName,
+            'birthday' => $birthDay
+
+
+        );
+
+        for($i=0; $i<count($dataJSON); $i++){
+            if($dataJSON[$i]['id'] == $id){
+                $dataJSON[$i] = $modifiedEmployee;
+                break;
+
+            }
+
+        }
+
+        file_put_contents('employees.json', json_encode($dataJSON));
 
     }
 
