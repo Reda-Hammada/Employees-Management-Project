@@ -15,14 +15,23 @@ $data = $employeeManager->getAllEmployees();
     <title>Document</title>
 </head>
 <body>
-    <a href="insert.php">Add new Employee</a> 
-    <a href="logout.php">log out<a/>
+    <header>
+        <nav>
+        
+        </nav>
+    </header>
     <table>
+    <a href="insert.php">Add new Employee</a> 
 
-    <tr>
+        <tr>
+
             <th>first name</th>
             <th>last name</th>
-            <th>age</th>
+            <th>birthday</th>
+            <th>department</th>
+            <th>occupation</th>
+            <th>salary<th>
+
         </tr> 
 
     <?php
