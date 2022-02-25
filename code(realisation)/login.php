@@ -1,15 +1,21 @@
 <?php
 
 
-if(isset($_POST['username'] and isset($_POST['password']))){
+if(isset($_POST['username'], $_POST['password'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
-    if( $_POST['username'] = 'admin' && $_POST['password'] = 'admin'){
+    if( $username =='admin' && $password == 'admin'){
 
         header('location:index.php');
     }
    
+    else{
+
+        echo " username or password wrong";
+    }
 }
+
+ 
 
 
 ?>
@@ -26,9 +32,9 @@ if(isset($_POST['username'] and isset($_POST['password']))){
     <main clas>
         <section>
             <form method="post">
-                <input type="text" name="admin">
-                <input type="password" name="admin">
-                <input type="submit" value="log in" name="input">
+                <input type="text" name="username">
+                <input type="password" name="password">
+                <input type="submit" value="log in">
             
             </form>
         </section>
