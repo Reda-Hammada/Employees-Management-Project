@@ -17,10 +17,10 @@ $data = $employeeManager->getAllEmployees();
 <body>
     <header>
         <nav>
-            <section class="topNavBar ">
+            <section class="topNavBar container-fluid bg-light ">
                 <div>
                     
-                    <img src="./img/logo.png">
+                    <img class="w-5" src="./img/logo.png">
 
                 </div>
                 <div>
