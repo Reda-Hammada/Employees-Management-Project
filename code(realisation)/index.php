@@ -1,4 +1,5 @@
 <?php
+include 'session.php';
 include 'employeesManager.php';
 $employeeManager = new employeesManager();
 $data = $employeeManager->getAllEmployees();
@@ -14,7 +15,8 @@ $data = $employeeManager->getAllEmployees();
     <title>Document</title>
 </head>
 <body>
-    <a href="insert.php">Add new Employee</a>
+    <a href="insert.php">Add new Employee</a> 
+    <a href="logout.php">log out<a/>
     <table>
 
     <tr>
