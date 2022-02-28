@@ -1,3 +1,9 @@
+* {
+
+    margin: 0;
+    padding: 0;
+}
+
 /* login form style */
 
 .login {
@@ -31,3 +37,30 @@
 }
 
 /* login form style */
+/*index page style navbar */
+.navbar img{
+    width: 40%;
+    margin-left: 20%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.searchBar{
+    width: 45%;
+    height: 35px;
+    border-radius: 5%;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    -ms-border-radius: 5%;
+    -o-border-radius: 5%;
+    border-style: solid;
+}
+
+.searchButton{
+
+    
+}
+
