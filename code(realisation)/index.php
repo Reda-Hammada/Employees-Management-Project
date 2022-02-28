@@ -73,28 +73,29 @@ if(!empty($_POST)){
                     </tr> 
                 <div>
 
-                <section class=' popupForm  border rounded   bg-light'>
-
+                <section class=' popupForm  border rounded '>
+                <div class="popup bg-white">
                     <div class="close float-end me-2" onclick="hide()">x</div>
 
-                    <div class="formContainer pt-3 ">
-                        <form method="post"  " class="ms-5 me-50">
-                            <input class="d-block form-control w-50 mt-2" type="text" name="first_name" required placeholder="first name">
-                            <input class="d-block form-control w-50 mt-2" type ="text" name="last_name" required placeholder="last name">
-                            <input class="d-block form-control w-50 mt-2" type="date" name="age" required>
-                            <select class="d-block  dropdown-men w-50 mt-2" name="department">
-                                <option class="dropdown-item"></option>
-                                <option class="dropdown-item" value="Marketing">Marketing</option>
-                                <option class="dropdown-item" value="IT">IT</option>
-                                <option class="dropdown-item" value="Finance">Finance</option>
-                                <option class="dropdown-item" value="Accounting">Accounting</option>
-                                <option class="dropdown-item" value="HR">HR</option>
-                            </select>
-                                <input class="d-block form-control w-50 mt-2" type="text" name="occupation"  placeholder="occupation" required>
-                                <input class="d-block form-control w-50 mt-2" type="text" name="salary" placeholder="salary" required>
-                                <input type="file" name="image">
-                                <input class=" text-center btn-lg d-block btn btn-success mt-2" type="submit"  value ="add">
-                        </form>
+                        <div class="formContainer pt-3 ">
+                            <form method="post"  " class="ms-5 me-50">
+                                <input class="d-block form-control w-50 mt-2" type="text" name="first_name" required placeholder="first name">
+                                <input class="d-block form-control w-50 mt-2" type ="text" name="last_name" required placeholder="last name">
+                                <input class="d-block form-control w-50 mt-2" type="date" name="age" required>
+                                <select class="d-block  dropdown-men w-50 mt-2" name="department">
+                                    <option class="dropdown-item"></option>
+                                    <option class="dropdown-item" value="Marketing">Marketing</option>
+                                    <option class="dropdown-item" value="IT">IT</option>
+                                    <option class="dropdown-item" value="Finance">Finance</option>
+                                    <option class="dropdown-item" value="Accounting">Accounting</option>
+                                    <option class="dropdown-item" value="HR">HR</option>
+                                </select>
+                                    <input class="d-block form-control w-50 mt-2" type="text" name="occupation"  placeholder="occupation" required>
+                                    <input class="d-block form-control w-50 mt-2" type="text" name="salary" placeholder="salary" required>
+                                    <input type="file" name="image">
+                                <input class=" buttonAdd btn-lg d-block btn btn-success mt-2" type="submit"  value ="add">
+                            </form>
+                        </div>
                     </div>
                 </section>
 

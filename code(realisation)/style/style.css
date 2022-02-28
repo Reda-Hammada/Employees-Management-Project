@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+body{
+
+  overflow-x: hidden;
+}
+
 /* login form style */
 
 .login {
@@ -80,20 +85,25 @@
 /* popup add Employee Form*/
 
 .popupForm {
-   width: 60%;
-    display: none;
-    z-index: 1;
-    margin-left: 20%;
-    margin-right: 20%;
-    position: fixed;
-    z-index: 1;
+     
 
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.247);
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    
    
 }
 
 .formContainer{
 
  width: 100%;
+ margin-top: 10%;
  margin-left: 25%;
  margin-right: 25%;
 
@@ -103,5 +113,11 @@
 .close:hover{
 
     color:green;
+    cursor: pointer;
 }
 
+.buttonAdd{
+
+    margin-left: 20%;
+    margin-right: 20%;
+}
