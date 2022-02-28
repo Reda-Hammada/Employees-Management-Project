@@ -30,7 +30,7 @@ if(!empty($_POST)){
     <form method="post">
         <input type="text" name="first_name" required>
         <input type ="text" name="last_name" required>
-        <input type="text" name="age" required>
+        <input type="date" name="age" required>
         <input type="submit"  value ="add">
     </form>
 </body>

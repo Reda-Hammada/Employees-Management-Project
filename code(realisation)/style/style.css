@@ -49,18 +49,30 @@
 }
 
 .searchBar{
-    width: 45%;
-    height: 35px;
+    width: 50%;
     border-radius: 5%;
     -webkit-border-radius: 5%;
     -moz-border-radius: 5%;
     -ms-border-radius: 5%;
     -o-border-radius: 5%;
     border-style: solid;
+    height: 40px;
+  
 }
 
 .searchButton{
 
-    
+    height: 40px;
+}
+
+.logoutButton{
+
+    height: 40px;
+
+}
+
+.searchContainer{
+
+    text-align: center;
 }
 
