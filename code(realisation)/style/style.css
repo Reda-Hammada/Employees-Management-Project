@@ -76,3 +76,10 @@
     text-align: center;
 }
 
+
+/* popup add Employee Form*/
+
+.popupForm {
+
+    display: none;
+}

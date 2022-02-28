@@ -4,6 +4,20 @@ include 'employeesManager.php';
 $employeeManager = new employeesManager();
 $data = $employeeManager->getAllEmployees();
 
+
+
+if(!empty($_POST)){
+
+    $employee = new Employees();
+    $employeeManager = new EmployeesManager();
+    $employee->setfirstName($_POST['first_name']);
+    $employee->setlastName($_POST['last_name']);
+    $employee->setAge($_POST['age']);
+    $employeeManager->insertEmployees($employee);
+
+    header("location: index.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +55,8 @@ $data = $employeeManager->getAllEmployees();
             <h1 class='text-success t-align'>Employees Management</h1>
         </section>
         <section>
-            <div class='container mt-5 mb-5 w-75 '>
-                        <a class="btn btn-success" href="insert.php">Add new Employee</a> 
+            <div class='container mt-5 mb-5 w-100 '>
+                        <a class="btn btn-success" onclick="show()">Add new Employee</a> 
             </div>
             <table class="container bg-light border broder-rounded w-100 px-5">
                 
@@ -59,6 +73,27 @@ $data = $employeeManager->getAllEmployees();
                     </tr> 
                 <div>
 
+                <section class=' popupForm w-50 text-center ms-auto me-auto bg-light'>
+                    <div class="close">x</div>
+                    <form method="post"  " class="ms-5 me-5">
+                    <input class="d-block" type="text" name="first_name" required>
+                    <input class="d-block" type ="text" name="last_name" required>
+                    <input class="d-block" type="date" name="age" required>
+                    <select class="d-block" name="department">
+                        <option></option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="IT">IT</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Accounting">Accounting</option>
+                        <option value="HR">HR</option>
+                    </select>
+                        <input class="d-block" type="text" name="occupation" required>
+                        <input class="d-block" type="text" name="salary" required>
+
+                        <input class="d-block" type="submit"  value ="add">
+                    </form>
+                </section>
+
                 <?php
                 foreach($data as $employee){
 
@@ -74,7 +109,7 @@ $data = $employeeManager->getAllEmployees();
                         <td>hdjqeqr</td>
                         <td>fafsasaasd</td>
                         <td>asdas</td>
-                        <td><a class= '  mt-2 mb-2 btn-md  btn btn-success' href="edit.php?id=<?php echo $employee->getId() ?>">edit</a></td>
+                        <td><a class= ' mt-2 mb-2  btn btn-success' href="edit.php?id=<?php echo $employee->getId() ?>">edit</a></td>
                         <td><a class=' btn  mt-2 mb-2 btn-md btn-danger' href="delete.php?id=<?php echo $employee->getId() ?>">delete</a></td>
                     
                     
@@ -85,5 +120,6 @@ $data = $employeeManager->getAllEmployees();
             </table>
         </section>
     </main>
+    <script src="./script/app.js"></script>
 </body>
 </html>
