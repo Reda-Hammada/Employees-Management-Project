@@ -31,6 +31,17 @@ if(!empty($_POST)){
         <input type="text" name="first_name" required>
         <input type ="text" name="last_name" required>
         <input type="date" name="age" required>
+        <select name="department">
+            <option></option>
+            <option value="Marketing">Marketing</option>
+            <option value="IT">IT</option>
+            <option value="Finance">Finance</option>
+            <option value="Accounting">Accounting</option>
+            <option value="HR">HR</option>
+        </select>
+        <input type="text" name="occupation" required>
+        <input type="text" name="salary" required>
+
         <input type="submit"  value ="add">
     </form>
 </body>

@@ -37,23 +37,25 @@ $data = $employeeManager->getAllEmployees();
         </nav>
     </header>
     <main>
+        <section class='w-100  text-center mt-4'>
+            <h1 class='text-success t-align'>Employees Management</h1>
+        </section>
         <section>
             <div class='container mt-5 mb-5 w-75 '>
                         <a class="btn btn-success" href="insert.php">Add new Employee</a> 
             </div>
-            <table class="container bg-light border broder-rounded w-75">
+            <table class="container bg-light border broder-rounded w-100 px-5">
                 
-                <div class='tableTittles'>
-                    <tr>
-                        <th>Image</th>
+                <div class='tableTittles ms-2'>
+                    <tr class=''>
+                        <th >Image</th>
                         <th>first name</th>
                         <th>last name</th>
                         <th>birthday</th>
                         <th>department</th>
                         <th>occupation</th>
                         <th>salary<th>
-                        <th>action</th>
-
+                        <th>Action</th>
                     </tr> 
                 <div>
 
@@ -62,18 +64,18 @@ $data = $employeeManager->getAllEmployees();
 
                 
             ?>
-                <div class="tableElements pt-2">
+                <div class="tableElements mt-2">
                     <tr>
 
                         <td></td>
                         <td><?php echo $employee->getfirstName()?></td>
                         <td><?php echo $employee->getlastName() ?></td>
                         <td><?php echo $employee->getAge() ?></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a class='btn btn-primary' href="edit.php?id=<?php echo $employee->getId() ?>">edit</a></td>
-                        <td><a class='btn btn-danger' href="delete.php?id=<?php echo $employee->getId() ?>">delete</a></td>
+                        <td>hdjqeqr</td>
+                        <td>fafsasaasd</td>
+                        <td>asdas</td>
+                        <td><a class= '  mt-2 mb-2 btn-md  btn btn-success' href="edit.php?id=<?php echo $employee->getId() ?>">edit</a></td>
+                        <td><a class=' btn  mt-2 mb-2 btn-md btn-danger' href="delete.php?id=<?php echo $employee->getId() ?>">delete</a></td>
                     
                     
                     </tr>      

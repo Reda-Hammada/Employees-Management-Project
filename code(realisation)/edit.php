@@ -34,7 +34,7 @@ if(isset($_POST['modify'])){
 
 <body>
     <form method="post">
-        <input type="text" name="id" value=<?php echo $employee->getId() ?>><br>
+        <input type="hiddden" name="id" value=<?php echo $employee->getId() ?>><br>
         <input type="text" name="firstName" value=<?php echo $employee->getfirstName()  ?>><br>
         <input type="text" name="lastName"  value=<?php echo $employee->getlastName()  ?>><br>
         <input type="text"  name="age" value= <?php echo $employee->getAge()?>><br>
