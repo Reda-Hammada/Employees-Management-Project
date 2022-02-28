@@ -80,6 +80,7 @@
 /* popup add Employee Form*/
 
 .popupForm {
-
-    display: none;
+   width: 40%;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -43,8 +43,8 @@ if(isset($_POST['username'], $_POST['password'])){
             
             <img src="./img/logo.png" alt="logo">
             <form method=" post border rounded rounded-3 w-25 ">
-                <input class=' username d-block border rounded border-dark ' type="text" name="username">
-                <input class= ' password d-block border rounded border-dark ' type="password" name="password">
+                <input class=' form-control username d-block border rounded border-dark ' type="text" name="username">
+                <input class= ' form-control password d-block border rounded border-dark ' type="password" name="password">
                 <input class=' submitButton d-block btn btn-success' type="submit" value="log in">
                 <p class="text-danger" ><?php echo $errorMessage = "username or password is wrong ";  ?></p>
             </form>

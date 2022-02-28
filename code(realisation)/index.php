@@ -56,7 +56,7 @@ if(!empty($_POST)){
         </section>
         <section>
             <div class='container mt-5 mb-5 w-100 '>
-                        <a class="btn btn-success" onclick="show()">Add new Employee</a> 
+                <a class="btn btn-success" onclick="show()">Add new Employee</a> 
             </div>
             <table class="container bg-light border broder-rounded w-100 px-5">
                 
@@ -73,25 +73,28 @@ if(!empty($_POST)){
                     </tr> 
                 <div>
 
-                <section class=' popupForm w-50 text-center ms-auto me-auto bg-light'>
-                    <div class="close">x</div>
-                    <form method="post"  " class="ms-5 me-5">
-                    <input class="d-block" type="text" name="first_name" required>
-                    <input class="d-block" type ="text" name="last_name" required>
-                    <input class="d-block" type="date" name="age" required>
-                    <select class="d-block" name="department">
-                        <option></option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="IT">IT</option>
-                        <option value="Finance">Finance</option>
-                        <option value="Accounting">Accounting</option>
-                        <option value="HR">HR</option>
-                    </select>
-                        <input class="d-block" type="text" name="occupation" required>
-                        <input class="d-block" type="text" name="salary" required>
+                <section class=' popupForm   ms-auto me-auto bg-light'>
 
-                        <input class="d-block" type="submit"  value ="add">
-                    </form>
+                    <div class="close">x</div>
+
+                    <div class="formContainer">
+                        <form method="post"  " class="ms-5 me-50">
+                            <input class="d-block form-control w-50 mt-2" type="text" name="first_name" required>
+                            <input class="d-block form-control w-50 mt-2" type ="text" name="last_name" required>
+                            <input class="d-block form-control w-50 mt-2" type="date" name="age" required>
+                            <select class="d-block  dropdown-men w-50 mt-2" name="department">
+                                <option class="dropdown-item"></option>
+                                <option class="dropdown-item" value="Marketing">Marketing</option>
+                                <option class="dropdown-item" value="IT">IT</option>
+                                <option class="dropdown-item" value="Finance">Finance</option>
+                                <option class="dropdown-item" value="Accounting">Accounting</option>
+                                <option class="dropdown-item" value="HR">HR</option>
+                            </select>
+                                <input class="d-block form-control w-50 mt-2" type="text" name="occupation" required>
+                                <input class="d-block form-control w-50 mt-2" type="text" name="salary" required>
+                                <input class="d-block btn btn-success mt-2" type="submit"  value ="add">
+                        </form>
+                    </div>
                 </section>
 
                 <?php
