@@ -71,8 +71,11 @@ if(isset($_POST['modify'])){
                         <input class="d-block form-control w-50 mt-2" type="text" name="occupation"  placeholder="occupation" required>
                         <input class="d-block form-control w-50 mt-2" type="text" name="salary" placeholder="salary" required>
                         <input class="form-control w-50 mt-2" type="file" name="image">
-                        <input class=" buttonModify btn-md d-inline btn btn-success mt-2 mb-2 ms-2  " type="submit" value="modify" name="modify">
-                        <a href="index.php" class=" buttonCancel btn btn-danger mt-2 mb-2 border rounded-2">Cancel</a>
+                        <div class="buttonContainer mt-2">
+                            <input class=" buttonModify btn-md d-inline btn btn-success mt-2 mb-2 ms-2  " type="submit" value="modify" name="modify">
+                            <a href="index.php" class=" buttonCancel btn btn-danger mt-2 mb-2 border rounded-2">Cancel</a>
+                        </div>
+                        
                         
                     
                     </form>
