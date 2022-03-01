@@ -41,7 +41,7 @@ if(isset($_POST['modify'])){
                 <section class="navbar w-100   bg-light d-flex flex-row  justify-content-evenly ">
                     <div >
                         
-                        <img class="img" src="./img/logo.png">
+                        <a class="cursor-pointer" href="index.php"><img class="img" src="./img/logo.png"></a>
 
                     </div>
                    
@@ -53,13 +53,13 @@ if(isset($_POST['modify'])){
     </header>
         <main>
 
-            <section id="replaceClass" class=" editForm  ">
+            <section id="replaceClass" class=" editForm  w-100 ">
                 <div  class="  w-100  h-75 bg-white">
                     <form  method="post" class="w-100  h-75 bg-white">
                         <input type="hidden"  class="d-block form-control w-50 mt-2" name="id" value=<?php echo $employee->getId() ?>><br>
                         <input type="text" name="firstName"  class="d-block form-control w-50 mt-2" value=<?php echo $employee->getfirstName()  ?>><br>
-                        <input type="text" name="lastName"  class="d-block form-control w-50 mt-2"  value=<?php echo $employee->getlastName()  ?>><br>
-                        <input type="date"  name="age" value= <?php echo $employee->getAge()?>><br>
+                        <input type="text"  name="lastName"  class="d-block form-control w-50 mt-2"  value=<?php echo $employee->getlastName()  ?>><br>
+                        <input type="date" class="d-block form-control w-50 mt-2"  name="age" value= <?php echo $employee->getAge()?>><br>
                         <select class="d-block form-select-md form-select w-50 mt-2" name="department">
                             <option class="dropdown-item"></option>
                             <option class="dropdown-item" value="Marketing">Marketing</option>
@@ -71,8 +71,8 @@ if(isset($_POST['modify'])){
                         <input class="d-block form-control w-50 mt-2" type="text" name="occupation"  placeholder="occupation" required>
                         <input class="d-block form-control w-50 mt-2" type="text" name="salary" placeholder="salary" required>
                         <input class="form-control w-50 mt-2" type="file" name="image">
-                         <input class="  btn-md d-inline btn btn-success mt-2 mb-2 ms-2  " type="submit" value="modify" name="modify">
-                        <a href="index.php" class="btn btn-danger mt-2 mb-2 border rounded-2">Cancel</a>
+                        <input class=" buttonModify btn-md d-inline btn btn-success mt-2 mb-2 ms-2  " type="submit" value="modify" name="modify">
+                        <a href="index.php" class=" buttonCancel btn btn-danger mt-2 mb-2 border rounded-2">Cancel</a>
                         
                     
                     </form>
