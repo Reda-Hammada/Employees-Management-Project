@@ -19,22 +19,7 @@ if(!empty($_POST)){
 }
 
 
-$employeeManager = new EmployeesManager();
-if(isset($_GET['id'])){
 
-   $employee =  $employeeManager->getById($_GET['id']);
-
-
-}
-
-if(isset($_POST['modify'])){
-    $id = $_POST['id'];
-    $first_Name = $_POST['firstName'];
-    $last_Name = $_POST['lastName'];
-    $age = $_POST['age'];
-    $employeeManager->modifyEmployee($id,$first_Name,$last_Name,$age);
-    header('location:index.php');
-}
 
 ?>
 
@@ -137,7 +122,7 @@ if(isset($_POST['modify'])){
                         <td>hdjqeqr</td>
                         <td>fafsasaasd</td>
                         <td>asdas</td>
-                        <td><a class= ' mt-2 mb-2  btn btn-success' id="buttonEdit" href="?id=<?php echo $employee->getId() ?>" >edit</a></td>
+                        <td><a class= ' mt-2 mb-2  btn btn-success' id="buttonEdit" " href="edit.php?id=<?php echo $employee->getId() ?>" >edit</a></td>
                         <td><a class=' btn  mt-2 mb-2 btn-md btn-danger' href="delete.php?id=<?php echo $employee->getId() ?>">delete</a></td>
                     
                     
@@ -146,28 +131,7 @@ if(isset($_POST['modify'])){
                 <div>
 
             </table>
-            <section id="replaceClass" class=" editForm   ">
-            <div  class="  w-100  h-75 bg-white">
-                <form method="post" class="w-100  h-75 bg-white">
-                    <input type="hiddden"  class="d-block form-control w-50 mt-2" name="id" value=<?php echo $employee->getId() ?>><br>
-                    <input type="text" name="firstName"  class="d-block form-control w-50 mt-2" value=<?php echo $employee->getfirstName()  ?>><br>
-                    <input type="text" name="lastName"  class="d-block form-control w-50 mt-2"  value=<?php echo $employee->getlastName()  ?>><br>
-                    <input type="date"  name="age" value= <?php echo $employee->getAge()?>><br>
-                    <select class="d-block form-select-md form-select w-50 mt-2" name="department">
-                        <option class="dropdown-item"></option>
-                        <option class="dropdown-item" value="Marketing">Marketing</option>
-                        <option class="dropdown-item" value="IT">IT</option>
-                        <option class="dropdown-item" value="Finance">Finance</option>
-                        <option class="dropdown-item" value="Accounting">Accounting</option>
-                        <option class="dropdown-item" value="HR">HR</option>
-                    </select>
-                    <input class="d-block form-control w-50 mt-2" type="text" name="occupation"  placeholder="occupation" required>
-                    <input class="d-block form-control w-50 mt-2" type="text" name="salary" placeholder="salary" required>
-                    <input class="form-control w-50 mt-2" type="file" name="image">
-                    <input class="  btn-md d-block btn btn-success mt-2 mb-2  " type="submit" value="modify" name="modify">
-                </form>
-            </div>
-            </section>
+       
         </section>
     </main>
     <script src="./script/app.js"></script>

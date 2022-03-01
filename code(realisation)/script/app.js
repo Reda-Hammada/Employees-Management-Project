@@ -16,11 +16,5 @@ function hide(){
 //edit form
 //function show
 // show edit popup form
-let  button = document.getElementById('buttonEdit');
-button.addEventListener('click', function editShow(e){
-e.preventDefault();
-document.querySelector('.editForm').style.display='flex';
 
 
-});
-}
