@@ -1,8 +1,4 @@
-* {
 
-    margin: 0;
-    padding: 0;
-}
 
 body{
 
@@ -84,40 +80,22 @@ body{
 
 /* popup add Employee Form*/
 
-.popupForm {
-     
 
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.247);
-        position: absolute;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        display: none;
-    
-   
+.formContainer input {
+
+    margin-top: 10px;
 }
 
-.formContainer{
 
- width: 100%;
- margin-top: 10%;
- margin-left: 25%;
- margin-right: 25%;
-
- 
-}
-
-.close:hover{
-
-    color:green;
-    cursor: pointer;
-}
 
 .buttonAdd{
 
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* edit form */
+.editForm{
+
+    display: none;
 }

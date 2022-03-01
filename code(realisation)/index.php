@@ -26,8 +26,8 @@ if(!empty($_POST)){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -41,10 +41,10 @@ if(!empty($_POST)){
 
                     </div>
                     <div class=' w-50 searchContainer '>
-                        <input class="searchBar  rounded-3 border-1" type="search" name="search">
+                        <input class="searchBar ps-3  rounded-3 border-1" type="search" name="search">
                         <input class="mb-1 ms-2 rounded-3 btn-md pt-0 searchButton btn btn-success" type="button" value="search">
                     </div>
-                    <a class="btn  btn-md rounded-3 btn-success" href="logout.php">log out</a>
+                    <a class="btn   btn-md rounded-3 btn-success" href="logout.php">log out</a>
 
 
 
@@ -73,16 +73,16 @@ if(!empty($_POST)){
                     </tr> 
                 <div>
 
-                <section class=' popupForm  border rounded '>
-                <div class="popup bg-white">
-                    <div class="close float-end me-2" onclick="hide()">x</div>
+                <section>
+                <div class=" popupForm w-100  h-75 bg-white">
+                    <div id="closeMark" class="close cursor-pointer	 fs-2 float-end me-5" onclick="hide()">x</div>
 
-                        <div class="formContainer pt-3 ">
-                            <form method="post"  " class="ms-5 me-50">
+                        <div class="formContainer  pt-1 pb-2 ">
+                            <form method="post"  >
                                 <input class="d-block form-control w-50 mt-2" type="text" name="first_name" required placeholder="first name">
                                 <input class="d-block form-control w-50 mt-2" type ="text" name="last_name" required placeholder="last name">
                                 <input class="d-block form-control w-50 mt-2" type="date" name="age" required>
-                                <select class="d-block  dropdown-men w-50 mt-2" name="department">
+                                <select class="d-block form-select-md form-select w-50 mt-2" name="department">
                                     <option class="dropdown-item"></option>
                                     <option class="dropdown-item" value="Marketing">Marketing</option>
                                     <option class="dropdown-item" value="IT">IT</option>
@@ -92,12 +92,13 @@ if(!empty($_POST)){
                                 </select>
                                     <input class="d-block form-control w-50 mt-2" type="text" name="occupation"  placeholder="occupation" required>
                                     <input class="d-block form-control w-50 mt-2" type="text" name="salary" placeholder="salary" required>
-                                    <input type="file" name="image">
-                                <input class=" buttonAdd btn-lg d-block btn btn-success mt-2" type="submit"  value ="add">
+                                    <input class="form-control w-50 mt-2" type="file" name="image">
+                                <input class="    buttonAdd btn-md d-block btn btn-success mt-2 mb-2  " type="submit"  value ="Add Employee">
                             </form>
                         </div>
                     </div>
                 </section>
+                
 
                 <?php
                 foreach($data as $employee){
@@ -123,6 +124,18 @@ if(!empty($_POST)){
                 <div>
 
             </table>
+            <section class="edit">
+            <div class="editForm">
+                <form method="post">
+                    <input type="hiddden" name="id" value=<?php echo $employee->getId() ?>><br>
+                    <input type="text" name="firstName" value=<?php echo $employee->getfirstName()  ?>><br>
+                    <input type="text" name="lastName"  value=<?php echo $employee->getlastName()  ?>><br>
+                    <input type="text"  name="age" value= <?php echo $employee->getAge()?>><br>
+                    <input type="submit" value="modify" name="modify">
+                    <a href="index.php">cancel</a>
+                </form>
+            </div>
+            </section>
         </section>
     </main>
     <script src="./script/app.js"></script>
