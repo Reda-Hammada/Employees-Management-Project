@@ -10,6 +10,9 @@ if(!empty($_POST)){
     $employee->setfirstName($_POST['firstName']);
     $employee->setlastName($_POST['lastName']);
     $employee->setbirthDay($_POST['birthDay']);
+    $employee->setDepartment($_POST['department']);
+    $employee->setOccupation($_POST['occupation']);
+    $employee->setSalary($_POST['salary']);
     $employeeManager->insertEmployee($employee);
     header('location:index.php');
 }

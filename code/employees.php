@@ -6,6 +6,9 @@ class Employees{
     private $firstName;
     private $lastName;
     private $age;
+    private $department;
+    private $occupation;
+    private $salary;
 
 
     public function getId(){
@@ -46,7 +49,37 @@ class Employees{
         $this-> age = $value;
     }
 
+    public function setDepartment($value){
+        
+        $this->department = $value;
 
+    }
+
+    public function getDepartment(){
+
+        return $this->department;
+    }
+
+    public function setOccupation($value){
+        
+        $this->occupation = $value;
+
+
+    }
+
+    public function getOccupation(){
+        return $this->occupation;
+    }
+
+    public function setSalary($value){
+
+        $this->salary = $value;
+    }
+
+    public function getSalary(){
+
+        return $this->salary;
+    }
 }
 
 

@@ -6,7 +6,7 @@ class EmployeesManager{
 
         private function getConnect(){
             if(is_null($this->connect)){
-                $this->connect =  mysqli_connect('localhost','Reda','123456','prototype3');
+                $this->connect =  mysqli_connect('localhost','Reda','123456','realisation');
             }
 
             else{
@@ -25,6 +25,8 @@ class EmployeesManager{
         $firstName = $employee->getfirstName();
         $lastName = $employee->getlastName();
         $age = $employee->getAge();
+        
+
  
         $insertDB = "INSERT INTO employees(first_name,last_name,age) VALUES('$firstName','$lastName','$age')";
         
@@ -33,9 +35,9 @@ class EmployeesManager{
 
     public function getAllEmployees(){
 
-        $sqlGetData = "SELECT ID, first_name, last_name, age FROM employees";
+        $sqlGetData = "SELECT ID, first_name,last_name, age FROM employees";
         $result = mysqli_query($this->getConnect(), $sqlGetData);
-        $datas = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $datas = mysqli_fetch_assoc($result);
 
         $dataArray = array();
 
@@ -46,6 +48,7 @@ class EmployeesManager{
                 $employe->setfirstName($data['first_name']);
                 $employe->setlastName($data['last_name']);
                 $employe->setAge($data['age']);
+            
                 array_push($dataArray, $employe);
 
 
