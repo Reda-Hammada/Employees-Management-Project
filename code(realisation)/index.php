@@ -18,7 +18,26 @@ if(!empty($_POST)){
     header("location: index.php");
 }
 
+
+$employeeManager = new EmployeesManager();
+if(isset($_GET['id'])){
+
+   $employee =  $employeeManager->getById($_GET['id']);
+
+
+}
+
+if(isset($_POST['modify'])){
+    $id = $_POST['id'];
+    $first_Name = $_POST['firstName'];
+    $last_Name = $_POST['lastName'];
+    $age = $_POST['age'];
+    $employeeManager->modifyEmployee($id,$first_Name,$last_Name,$age);
+    header('location:index.php');
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +75,7 @@ if(!empty($_POST)){
         </section>
         <section>
             <div class='container mt-5 mb-5 w-100 '>
-                <a class="btn btn-success" onclick="show()">Add new Employee</a> 
+                <a class="btn btn-success" onclick='show()'>Add new Employee</a> 
             </div>
             <table class="container bg-light border broder-rounded w-100 px-5">
                 
@@ -73,9 +92,11 @@ if(!empty($_POST)){
                     </tr> 
                 <div>
 
-                <section>
-                <div class=" popupForm w-100  h-75 bg-white">
-                    <div id="closeMark" class="close cursor-pointer	 fs-2 float-end me-5" onclick="hide()">x</div>
+                <section class='popupForm w-100  h-100'>
+                    <div class="subFormContainer border rounded-2 bg-white w-75">
+
+                   
+                    <div id="closeMark" class="close cursor-pointer float-end fs-3 	 me-4   " onclick="hide()">x</div>
 
                         <div class="formContainer  pt-1 pb-2 ">
                             <form method="post"  >
@@ -95,8 +116,9 @@ if(!empty($_POST)){
                                     <input class="form-control w-50 mt-2" type="file" name="image">
                                 <input class="    buttonAdd btn-md d-block btn btn-success mt-2 mb-2  " type="submit"  value ="Add Employee">
                             </form>
+                            </div>
                         </div>
-                    </div>
+                    
                 </section>
                 
 
@@ -115,7 +137,7 @@ if(!empty($_POST)){
                         <td>hdjqeqr</td>
                         <td>fafsasaasd</td>
                         <td>asdas</td>
-                        <td><a class= ' mt-2 mb-2  btn btn-success' href="edit.php?id=<?php echo $employee->getId() ?>">edit</a></td>
+                        <td><a class= ' mt-2 mb-2  btn btn-success' id="buttonEdit" href="?id=<?php echo $employee->getId() ?>" >edit</a></td>
                         <td><a class=' btn  mt-2 mb-2 btn-md btn-danger' href="delete.php?id=<?php echo $employee->getId() ?>">delete</a></td>
                     
                     
@@ -124,15 +146,25 @@ if(!empty($_POST)){
                 <div>
 
             </table>
-            <section class="edit">
-            <div class="editForm">
-                <form method="post">
-                    <input type="hiddden" name="id" value=<?php echo $employee->getId() ?>><br>
-                    <input type="text" name="firstName" value=<?php echo $employee->getfirstName()  ?>><br>
-                    <input type="text" name="lastName"  value=<?php echo $employee->getlastName()  ?>><br>
-                    <input type="text"  name="age" value= <?php echo $employee->getAge()?>><br>
-                    <input type="submit" value="modify" name="modify">
-                    <a href="index.php">cancel</a>
+            <section id="replaceClass" class=" editForm   ">
+            <div  class="  w-100  h-75 bg-white">
+                <form method="post" class="w-100  h-75 bg-white">
+                    <input type="hiddden"  class="d-block form-control w-50 mt-2" name="id" value=<?php echo $employee->getId() ?>><br>
+                    <input type="text" name="firstName"  class="d-block form-control w-50 mt-2" value=<?php echo $employee->getfirstName()  ?>><br>
+                    <input type="text" name="lastName"  class="d-block form-control w-50 mt-2"  value=<?php echo $employee->getlastName()  ?>><br>
+                    <input type="date"  name="age" value= <?php echo $employee->getAge()?>><br>
+                    <select class="d-block form-select-md form-select w-50 mt-2" name="department">
+                        <option class="dropdown-item"></option>
+                        <option class="dropdown-item" value="Marketing">Marketing</option>
+                        <option class="dropdown-item" value="IT">IT</option>
+                        <option class="dropdown-item" value="Finance">Finance</option>
+                        <option class="dropdown-item" value="Accounting">Accounting</option>
+                        <option class="dropdown-item" value="HR">HR</option>
+                    </select>
+                    <input class="d-block form-control w-50 mt-2" type="text" name="occupation"  placeholder="occupation" required>
+                    <input class="d-block form-control w-50 mt-2" type="text" name="salary" placeholder="salary" required>
+                    <input class="form-control w-50 mt-2" type="file" name="image">
+                    <input class="  btn-md d-block btn btn-success mt-2 mb-2  " type="submit" value="modify" name="modify">
                 </form>
             </div>
             </section>
