@@ -77,23 +77,26 @@ class EmployeesManager{
 
         $getById = "SELECT * FROM employees WHERE ID = $id";
         $result =  mysqli_query($this->getConnect(), $getById);
-        $employeeData = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $employeeData = mysqli_fetch_assoc($result);
 
         $employee = new Employees();
         $employee->setId($employeeData['ID']);
         $employee->setfirstName($employeeData['first_name']);
         $employee->setlastName($employeeData['last_name']);
         $employee->setAge($employeeData['age']);
+        $employee->setDepartment($employeeData['department']);
+        $employee->setOccupation($employeeData['occupation']);
+        $employee->setSalary($employeeData['salary']);
 
         return $employee;
 
 
     }
     
-    public function modifyEmployee($id,$first_Name,$last_Name,$age){
+    public function modifyEmployee($id,$first_Name,$last_Name,$age,$department,$occupation,$salary){
 
         $updateDB = "UPDATE employees SET 
-        first_name='$first_Name', last_name ='$last_Name', age='$age'
+        first_name='$first_Name', last_name ='$last_Name', age='$age', department='$department', occupation='$occupation, salary = '$salary'
         WHERE ID = $id ";
 
        mysqli_query($this->getConnect(),$updateDB);
@@ -103,6 +106,16 @@ class EmployeesManager{
             $message = "data base connection error " . mysqli_error($this->getConnect());
             throw new exception($message);
         }
+
+
+        
+    }
+
+    public function uploadImage($filename,$tempname){
+
+        $folder ='./img/' . $filename;
+
+        move_uploaded_file($tempname, $folder);
     }
 }
 

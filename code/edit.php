@@ -14,7 +14,11 @@ if(isset($_POST['modify'])){
     $first_Name = $_POST['firstName'];
     $last_Name = $_POST['lastName'];
     $age = $_POST['age'];
-    $employeeManager->modifyEmployee($id,$first_Name,$last_Name,$age);
+    $department =  $_POST['department'];
+    $occupation =  $_POST['occupation'];
+    $salary = $_POST['salary'];
+    $image = $_POST['image'];
+    $employeeManager->modifyEmployee($id,$first_Name,$last_Name,$age,$department,$occupation,$salary,$image);
     header('location:index.php');
 }
 
@@ -60,7 +64,7 @@ if(isset($_POST['modify'])){
                         <input type="text" name="firstName"  class="d-block form-control w-50 mt-2" value=<?php echo $employee->getfirstName()  ?>><br>
                         <input type="text"  name="lastName"  class="d-block form-control w-50 mt-2"  value=<?php echo $employee->getlastName()  ?>><br>
                         <input type="date" class="d-block form-control w-50 mt-2"  name="age" value= <?php echo $employee->getAge()?>><br>
-                        <select class="d-block form-select-md form-select w-50 mt-2" name="department">
+                        <select class="d-block form-select-md form-select w-50 mt-2" name="department"  value=<?php echo $employee->getDepartment() ?>>
                             <option class="dropdown-item"></option>
                             <option class="dropdown-item" value="Marketing">Marketing</option>
                             <option class="dropdown-item" value="IT">IT</option>
@@ -68,11 +72,11 @@ if(isset($_POST['modify'])){
                             <option class="dropdown-item" value="Accounting">Accounting</option>
                             <option class="dropdown-item" value="HR">HR</option>
                         </select>
-                        <input class="d-block form-control w-50 mt-2" type="text" name="occupation"  placeholder="occupation" required>
-                        <input class="d-block form-control w-50 mt-2" type="text" name="salary" placeholder="salary" required>
-                        <input class="form-control w-50 mt-2" type="file" name="image">
+                        <input class="d-block form-control w-50 mt-2" type="text" name="occupation"  placeholder="occupation" required  value=<?php echo $employee->getOccupation() ?>>
+                        <input class="d-block form-control w-50 mt-2" type="text" name="salary" placeholder="salary" required  value=<?php echo $employee->getSalary() ?>>
+                        <input class="form-control w-50 mt-2" type="file" name="image"  value=<?php echo $employee->getImage() ?>>
                         <div class="buttonContainer mt-2">
-                            <input class=" buttonModify btn-md d-inline btn btn-success mt-2 mb-2 ms-2  " type="submit" value="modify" name="modify">
+                            <input class=" buttonModify btn-md d-inline btn btn-success mt-2 mb-2 ms-2  " type="submit" value="modify" name="modify" >
                             <a href="index.php" class=" buttonCancel btn btn-danger mt-2 mb-2 border rounded-2">Cancel</a>
                         </div>
                         

@@ -9,12 +9,13 @@ if(isset($_POST['username'],$_POST['password'])){
     if($username = 'admin' && $password = 'admin'){
 
         header('location:index.php');
-
+    
     }
-
-   
+  
         
 }
+
+
 
 
 
@@ -38,11 +39,11 @@ if(isset($_POST['username'],$_POST['password'])){
 
 <body class = 'bg-light w-100'>
     <main>
-        <section class='w-75 mt-5  ms-auto   me-auto  bg-white'>
-            <div class="w-100">
-                <img src="./img/logo.png" alt="logo" class=" ms-auto me-auto">
+        <section class='w-50 mt-5  ms-auto   me-auto   bg-white'>
+            <div class="w-25 ms-auto me-auto">
+                <img src="./img/logo.png" alt="logo" >
             </div>
-            <form method="post border rounded rounded-3 w-25 ">
+            <form method="post border rounded rounded-3 w-25">
                 <input class='d-block border form-control mt-3 w-50 ms-auto me-auto rounded border-dark ' type="text" name="username">
                 <input class= 'd-block border form-control mt-2 w-50  ms-auto me-auto rounded border-dark ' type="password" name="password">
                 <input class='d-block ms-auto me-auto  mt-3 btn btn-success' type="submit" value="log in">

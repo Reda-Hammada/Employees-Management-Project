@@ -9,6 +9,7 @@ $data = $employeeManager->getAllEmployees();
 if(!empty($_POST)){
 
     $employee = new Employees();
+    $filename = $_FILES["image"]["name"];
     $employeeManager = new EmployeesManager();
     $employee->setfirstName($_POST['first_name']);
     $employee->setlastName($_POST['last_name']);
@@ -16,9 +17,11 @@ if(!empty($_POST)){
     $employee->setDepartment($_POST['department']);
     $employee->setOccupation($_POST['occupation']);
     $employee->setSalary($_POST['salary']);
-    $employee->setImage($_POST['image']);
-  
+    $employee->setImage($filename);
+    
+    $tempname = $_FILES['image']['tmp_name'];
     $employeeManager->insertEmployees($employee);
+    $employeeManager->uploadImage($filename,$tempname);
 
     header("location: index.php");
 }
@@ -88,8 +91,8 @@ if(!empty($_POST)){
                    
                     <div id="closeMark" class="close cursor-pointer float-end fs-3 	 me-4   " onclick="hide()">x</div>
 
-                        <div class="formContainer  pt-1 pb-2 ">
-                            <form method="post"  >
+                        <div class="formContainer ms-auto me-auto pt-1 pb-2 ">
+                            <form method="post" enctype="multipart/form-data"  >
                                 <input class="d-block form-control w-50 mt-2" type="text" name="first_name" required placeholder="first name">
                                 <input class="d-block form-control w-50 mt-2" type ="text" name="last_name" required placeholder="last name">
                                 <input class="d-block form-control w-50 mt-2" type="date" name="age" required>
