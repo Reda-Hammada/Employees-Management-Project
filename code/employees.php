@@ -9,6 +9,7 @@ class Employees{
     private $department;
     private $occupation;
     private $salary;
+    private $image;
 
 
     public function getId(){
@@ -87,11 +88,13 @@ class Employees{
 
     public function getImage(){
 
+        return $this->image;
     }
 
-    public function setImage(){
+    public function setImage($value){
 
-        
+
+        $this->image = $value;
     }
     
 }

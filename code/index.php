@@ -16,6 +16,7 @@ if(!empty($_POST)){
     $employee->setDepartment($_POST['department']);
     $employee->setOccupation($_POST['occupation']);
     $employee->setSalary($_POST['salary']);
+    $employee->setImage($_POST['image']);
   
     $employeeManager->insertEmployees($employee);
 
@@ -119,7 +120,7 @@ if(!empty($_POST)){
                 <div class="tableElements mt-2">
                     <tr>
 
-                        <td></td>
+                        <td><?php echo $employee->getImage() ?></td>
                         <td><?php echo $employee->getfirstName()?></td>
                         <td><?php echo $employee->getlastName() ?></td>
                         <td><?php echo $employee->getAge() ?></td>
