@@ -22,20 +22,24 @@ class EmployeesManager{
 
     
     public function insertEmployees($employee){
+
         $firstName = $employee->getfirstName();
         $lastName = $employee->getlastName();
         $age = $employee->getAge();
+        $department = $employee->getDepartment();
+        $occupation = $employee->getOccupation();
+        $salary = $employee->getSalary();
         
 
  
-        $insertDB = "INSERT INTO employees(first_name,last_name,age) VALUES('$firstName','$lastName','$age')";
+        $insertDB = "INSERT INTO employees(first_name,last_name,age,department,occupation,salary) VALUES('$firstName','$lastName','$age','$department','$occupation','$salary')";
         
         mysqli_query($this->getConnect(),$insertDB);
 }
 
     public function getAllEmployees(){
 
-        $sqlGetData = "SELECT ID, first_name,last_name, age FROM employees";
+        $sqlGetData = "SELECT ID, first_name,last_name, age,department,occupation,salary FROM employees";
         $result = mysqli_query($this->getConnect(), $sqlGetData);
         $datas = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -48,7 +52,9 @@ class EmployeesManager{
                 $employe->setfirstName($data['first_name']);
                 $employe->setlastName($data['last_name']);
                 $employe->setAge($data['age']);
-            
+                $employe->setDepartment($data['department']);
+                $employe->setOccupation($data['occupation']);
+                $employe->setSalary($data['salary']);            
                 array_push($dataArray, $employe);
 
 
@@ -69,7 +75,7 @@ class EmployeesManager{
 
         $getById = "SELECT * FROM employees WHERE ID = $id";
         $result =  mysqli_query($this->getConnect(), $getById);
-        $employeeData = mysqli_fetch_assoc($result);
+        $employeeData = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         $employee = new Employees();
         $employee->setId($employeeData['ID']);

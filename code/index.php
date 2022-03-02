@@ -13,6 +13,9 @@ if(!empty($_POST)){
     $employee->setfirstName($_POST['first_name']);
     $employee->setlastName($_POST['last_name']);
     $employee->setAge($_POST['age']);
+    $employee->setDepartment($_POST['department']);
+    $employee->setOccupation($_POST['occupation']);
+    $employee->setSalary($_POST['salary']);
   
     $employeeManager->insertEmployees($employee);
 
@@ -120,9 +123,9 @@ if(!empty($_POST)){
                         <td><?php echo $employee->getfirstName()?></td>
                         <td><?php echo $employee->getlastName() ?></td>
                         <td><?php echo $employee->getAge() ?></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td ><?php echo $employee->getDepartment() ?></td>
+                        <td><?php echo $employee->getOccupation() ?></td>
+                        <td><?php echo $employee->getSalary() ?></td>
                         <td><a class= ' mt-2 mb-2  btn btn-success' id="buttonEdit" " href="edit.php?id=<?php echo $employee->getId() ?>" >edit</a></td>
                         <td><a class=' btn  mt-2 mb-2 btn-md btn-danger' href="delete.php?id=<?php echo $employee->getId() ?>">delete</a></td>
                     

@@ -49,15 +49,22 @@ class Employees{
         $this-> age = $value;
     }
 
+    public function getDepartment(){
+
+        return $this->department;
+    }
+
     public function setDepartment($value){
         
         $this->department = $value;
 
     }
 
-    public function getDepartment(){
+   
 
-        return $this->department;
+
+    public function getOccupation(){
+        return $this->occupation;
     }
 
     public function setOccupation($value){
@@ -67,8 +74,10 @@ class Employees{
 
     }
 
-    public function getOccupation(){
-        return $this->occupation;
+
+    public function getSalary(){
+
+        return $this->salary;
     }
 
     public function setSalary($value){
@@ -76,10 +85,15 @@ class Employees{
         $this->salary = $value;
     }
 
-    public function getSalary(){
+    public function getImage(){
 
-        return $this->salary;
     }
+
+    public function setImage(){
+
+        
+    }
+    
 }
 
 

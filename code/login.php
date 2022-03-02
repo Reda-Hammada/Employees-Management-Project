@@ -1,21 +1,19 @@
 <?php
 
-session_start();
 
-if(isset($_POST['username'], $_POST['password'])){
+if(isset($_POST['username'],$_POST['password'])){
+
     $username = $_POST['username'];
     $password = $_POST['password'];
-   
-    if( $username =='admin' && $password == 'admin'){
-        $_SESSION['admin'] = $username;
-        $_SESSION['password'] = $password;
-        header('location:index.php');
-    }
-   
-    else{
 
-       $errorMessage;
+    if($username = 'admin' && $password = 'admin'){
+
+        header('location:index.php');
+
     }
+
+   
+        
 }
 
 
@@ -48,7 +46,7 @@ if(isset($_POST['username'], $_POST['password'])){
                 <input class='d-block border form-control mt-3 w-50 ms-auto me-auto rounded border-dark ' type="text" name="username">
                 <input class= 'd-block border form-control mt-2 w-50  ms-auto me-auto rounded border-dark ' type="password" name="password">
                 <input class='d-block ms-auto me-auto  mt-3 btn btn-success' type="submit" value="log in">
-                <p class="text-danger text-center mt-3  mb-3" ><?php echo $errorMessage = "username or password is wrong ";  ?></p>
+                <p class="text-danger text-center mt-3  mb-3" ></p>
             </form>
         </section>
     </main>
