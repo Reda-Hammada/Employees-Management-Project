@@ -37,7 +37,7 @@ class EmployeesManager{
 
         $sqlGetData = "SELECT ID, first_name,last_name, age FROM employees";
         $result = mysqli_query($this->getConnect(), $sqlGetData);
-        $datas = mysqli_fetch_assoc($result);
+        $datas = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         $dataArray = array();
 

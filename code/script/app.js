@@ -1,4 +1,3 @@
-// add form 
 //function show
 // show popup add employee form
 function show(){
@@ -12,10 +11,5 @@ function hide(){
 
     document.querySelector('.popupForm').style.display='none';
 }
-
-//edit form
-//function show
-// show edit popup form
-
 
  
