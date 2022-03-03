@@ -1,7 +1,7 @@
 <?php
 include "employees.php";
 $employee = new Employee();
-$employee->setFirstName("Reda");
+$employee->setfirstName("Reda");
 echo $employee->getFirstName();
 
 ?>
