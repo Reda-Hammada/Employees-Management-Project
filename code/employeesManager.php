@@ -96,8 +96,8 @@ class EmployeesManager{
     public function modifyEmployee($id,$first_Name,$last_Name,$age,$department,$occupation,$salary){
 
         $updateDB = "UPDATE employees SET 
-        first_name='$first_Name', last_name ='$last_Name', age='$age', department='$department', occupation='$occupation, salary = '$salary'
-        WHERE ID = $id ";
+        first_name = '$first_Name', last_name = '$last_Name', age = '$age', department = '$department', occupation = '$department', occupation = '$occupation', salary = '$salary' 
+        WHERE ID  = $id ";
 
        mysqli_query($this->getConnect(),$updateDB);
         

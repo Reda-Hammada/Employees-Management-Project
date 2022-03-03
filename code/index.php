@@ -19,7 +19,7 @@ if(!empty($_POST)){
     $employee->setSalary($_POST['salary']);
     $employee->setImage($filename);
     
-    $tempname = $_FILES['image']['tmp_name'];
+    $tempname = $_FILES["image"]['tmp_name'];
     $employeeManager->insertEmployees($employee);
     $employeeManager->uploadImage($filename,$tempname);
 

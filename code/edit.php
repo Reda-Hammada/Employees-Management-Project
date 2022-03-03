@@ -17,8 +17,7 @@ if(isset($_POST['modify'])){
     $department =  $_POST['department'];
     $occupation =  $_POST['occupation'];
     $salary = $_POST['salary'];
-    $image = $_POST['image'];
-    $employeeManager->modifyEmployee($id,$first_Name,$last_Name,$age,$department,$occupation,$salary,$image);
+    $employeeManager->modifyEmployee($id,$first_Name,$last_Name,$age,$department,$occupation,$salary);
     header('location:index.php');
 }
 
@@ -64,8 +63,8 @@ if(isset($_POST['modify'])){
                         <input type="text" name="firstName"  class="d-block form-control w-50 mt-2" value=<?php echo $employee->getfirstName()  ?>><br>
                         <input type="text"  name="lastName"  class="d-block form-control w-50 mt-2"  value=<?php echo $employee->getlastName()  ?>><br>
                         <input type="date" class="d-block form-control w-50 mt-2"  name="age" value= <?php echo $employee->getAge()?>><br>
-                        <select class="d-block form-select-md form-select w-50 mt-2" name="department"  value=<?php echo $employee->getDepartment() ?>>
-                            <option class="dropdown-item"></option>
+                        <select class="d-block form-select-md form-select w-50 mt-2" name="department"  value="<?php echo $employee->getDepartment() ?>">
+                            <option class="dropdown-item"> <?php echo $employee->getDepartment() ?></option>
                             <option class="dropdown-item" value="Marketing">Marketing</option>
                             <option class="dropdown-item" value="IT">IT</option>
                             <option class="dropdown-item" value="Finance">Finance</option>
