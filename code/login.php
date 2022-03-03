@@ -1,19 +1,18 @@
 <?php
 
-session_start();
+
 if(isset($_POST['username'],$_POST['password'])){
   
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     if($username == 'admin' && $password == 'admin'){
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] =  $password;
+      
         header('location:index.php');
     
     }
 
-    
+
     
   
         
