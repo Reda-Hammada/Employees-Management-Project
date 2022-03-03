@@ -52,10 +52,7 @@ if(!empty($_POST)){
                         <img class="img" src="./img/logo.png">
 
                     </div>
-                    <div class=' w-50 searchContainer '>
-                        <input class="searchBar ps-3  rounded-3 border-1" type="search" name="search">
-                        <input class="mb-1 ms-2 rounded-3 btn-md pt-0 searchButton btn btn-success" type="button" value="search">
-                    </div>
+                  
                     <a class="btn   btn-md rounded-3 btn-success" href="logout.php">log out</a>
 
 
@@ -69,6 +66,8 @@ if(!empty($_POST)){
         <section>
             <div class='container mt-5 mb-5 w-100 '>
                 <a class="btn btn-success" onclick='show()'>Add new Employee</a> 
+                <a class=" ps-3 btn btn-success  rounded-3 border-1" href="search.php ">Search Employee</a>
+
             </div>
             <table class="container bg-light border broder-rounded w-100 px-5">
                 
@@ -123,7 +122,7 @@ if(!empty($_POST)){
                 <div class="tableElements mt-2">
                     <tr>
 
-                        <td><?php echo $employee->getImage() ?></td>
+                        <td > <img class="border rounded-circle" style="max-width:50px;" src="<?php echo './img/' . $employee->getImage() ?>"></td>
                         <td><?php echo $employee->getfirstName()?></td>
                         <td><?php echo $employee->getlastName() ?></td>
                         <td><?php echo $employee->getAge() ?></td>

@@ -10,14 +10,29 @@ if(isset($_GET['id'])){
 }
 
 if(isset($_POST['modify'])){
-    $id = $_POST['id'];
-    $first_Name = $_POST['firstName'];
-    $last_Name = $_POST['lastName'];
-    $age = $_POST['age'];
-    $department =  $_POST['department'];
-    $occupation =  $_POST['occupation'];
+    $file =  $_FILES['image']['name'];
+    $employee = new Employees();
+    $employee->setId($_POST['id']);
+    $employee->setfirstName($_POST['firstName']);
+    $employee->setlastName($_POST['lastName']);
+    $employee->setAge($_POST['age']);
+    $employee->setDepartment($_POST['department']);
+    $employee->setOccupation($_POST['occupation']);
+    $employee->setSalary($_POST['salary']);
     $salary = $_POST['salary'];
-    $employeeManager->modifyEmployee($id,$first_Name,$last_Name,$age,$department,$occupation,$salary);
+    $tempaname = $_FILES["image"]["tmp_name"];
+    if(!empty($file)){
+
+        $employee->setImage($file);
+        $employeeManager->uploadImage($file, $tempaname);
+
+    }
+    else {
+
+        $employee->setImage($employee->getImage());
+    }
+
+    $employeeManager->modifyEmployee($employee, $id);
     header('location:index.php');
 }
 
@@ -58,7 +73,7 @@ if(isset($_POST['modify'])){
 
             <section id="replaceClass" class=" editForm  w-100 ">
                 <div  class="  w-100  h-75 bg-white">
-                    <form  method="post" class="w-100  h-75 bg-white">
+                    <form  method="post" class="w-100  h-75 bg-white" enctype="multipart/form-data">
                         <input type="hidden"  class="d-block form-control w-50 mt-2" name="id" value=<?php echo $employee->getId() ?>><br>
                         <input type="text" name="firstName"  class="d-block form-control w-50 mt-2" value=<?php echo $employee->getfirstName()  ?>><br>
                         <input type="text"  name="lastName"  class="d-block form-control w-50 mt-2"  value=<?php echo $employee->getlastName()  ?>><br>

@@ -93,12 +93,18 @@ class EmployeesManager{
 
     }
     
-    public function modifyEmployee($id,$first_Name,$last_Name,$age,$department,$occupation,$salary){
+    public function modifyEmployee($employee, $id){
 
-        $updateDB = "UPDATE employees SET 
-        first_name = '$first_Name', last_name = '$last_Name', age = '$age', department = '$department', occupation = '$department', occupation = '$occupation', salary = '$salary' 
-        WHERE ID  = $id ";
-
+        $id = $employee->getId();
+        $first_Name =  $employee->getfirstName();
+        $last_Name = $employee->getlastName();
+        $age = $employee->getAge();
+        $department = $employee->getDepartment();
+        $occupation = $employee->getOccupation();
+        $salary = $employee->getSalary();
+        $image = $employee->getImage();
+        $updateDB = "UPDATE employees SET first_name = '$first_Name',  last_name = '$last_Name', age = '$age', department = '$department', occupation = '$occupation', salary = '$salary', img = '$image'
+        WHERE ID = $id";
        mysqli_query($this->getConnect(),$updateDB);
         
         if(mysqli_error($this->getConnect())){
@@ -116,6 +122,31 @@ class EmployeesManager{
         $folder ='./img/' . $filename;
 
         move_uploaded_file($tempname, $folder);
+    }
+
+
+    public function searchByInput($searchInput){
+
+        $selectedRow = "SELECT * FROM employees WHERE first_name = '$searchInput' OR last_name = '$searchInput' OR department = '$searchInput'";
+        $query = mysqli_query($this->getConnect(), $selectedRow);
+        $data = mysqli_fetch_all($query, MYSQLI_ASSOC);
+        
+        $employeeArray = array();
+        foreach($data as $searchedEmployee){
+
+            $employee = new Employees();
+            $employee->setImage($searchedEmployee['img']);
+            $employee->setfirstName($searchedEmployee['first_name']);
+            $employee->setlastName($searchedEmployee['last_name']);
+            $employee->setDepartment($searchedEmployee['department']);
+            $employee->setOccupation($searchedEmployee['occupation']);
+            $employee->setSalary($searchedEmployee['salary']);
+            array_Push($employeeArray, $employee);
+
+        }   
+
+        return $employeeArray;
+
     }
 }
 
