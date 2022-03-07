@@ -1,5 +1,4 @@
 <?php
-require('../vendor/autoload.php');
 include 'employeesManager.php';
 $employeeManager = new employeesManager();
 $data = $employeeManager->getAllEmployees();
