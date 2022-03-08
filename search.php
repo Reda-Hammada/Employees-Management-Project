@@ -32,14 +32,13 @@ if(!empty($_POST)){
 <header>
         <nav  class="navBarContainer">
             <div>
-                <section class="navbar w-100    bg-light d-flex flex-row  justify-content-evenly ">
+                <section class="navbar w-100    bg-light d-flex flex-row  justify-content-center ">
                     <div >
                         
                         <a class="cursor-pointer" href="index.php"><img class="img" src="./img/logo.png"></a>
 
                     </div>
                    
-                    <a class="btn   btn-md rounded-3 btn-success" href="logout.php">log out</a>
 
 
 
