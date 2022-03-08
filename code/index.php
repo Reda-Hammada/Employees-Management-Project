@@ -1,5 +1,4 @@
 <?php
-
 include 'employeesManager.php';
 $employeeManager = new employeesManager();
 $data = $employeeManager->getAllEmployees();
@@ -122,7 +121,7 @@ if(!empty($_POST)){
                 <div class="tableElements mt-2">
                     <tr>
 
-                        <td > <img class="border rounded-circle" style="max-width:50px;" src="<?php echo './img/' . $employee->getImage() ?>"></td>
+                        <td > <img class="border rounded-circle" style="max-width:50px;" src="<?php echo '/img/' . $employee->getImage() ?>"></td>
                         <td><?php echo $employee->getfirstName()?></td>
                         <td><?php echo $employee->getlastName() ?></td>
                         <td><?php echo $employee->getAge() ?></td>
