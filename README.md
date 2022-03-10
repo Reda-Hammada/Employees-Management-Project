@@ -19,7 +19,7 @@ SQL
 ![](./img/pme.jpg)  
 
 ### Author:  
--Github: [Reda-Hammada](https://github.com/Reda-Hammada) 
--LinkedIn: [Reda Hammada](https://www.linkedin.com/in/reda-hammada/)   
--Portfolio:[](www.hammada-reda.com)  
+-Github: [Reda-Hammada](https://github.com/Reda-Hammada)   
+-LinkedIn: [Reda Hammada](https://www.linkedin.com/in/reda-hammada/)    
+-Portfolio:[www.hammada-reda.com](www.hammada-reda.com)    
 
