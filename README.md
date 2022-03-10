@@ -18,7 +18,7 @@ SQL
 
 [PME app](https://pmeapp.herokuapp.com/)    
 
-![](./img/pme.jpg)  
+![](/code/img/pme.jpg)  
 
 ### Author:    
   
